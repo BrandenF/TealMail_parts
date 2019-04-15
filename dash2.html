@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="foundation.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="app.css">
+  </head>
+  <body>
+    <h1 class="text-center" id="bann">TEAL MAIL</h1>
+    <div class="grid-container" id="dash">
+      <div class="grid-x grid-margin">
+
+        <div class="cell medium-2 text-center" id="sideBar">
+          <button class="button button-rounded-hover" id="send">SEND</button><br>
+          <button class="button button-rounded-hover" id="in">INBOX</button><br>
+          <button class="button button-rounded-hover" id="out">OUTBOX</button><br>
+          <p>Contact List</p>
+          <input type="text" onkeyup="searchList()" placeholder="Search.." id="search">
+           <div id="contacts">
+             <button type="button" id="addUser">Add User?</button>
+             <p id="add"></p>
+           </div>
+		 
+		 <div class="dropdown">
+  			<button class="dropbtn">Dropdown</button>
+  			<div class="dropdown-content">
+			
+    		 <button id="change-theme-btn">Phantom</button>
+       	  		<script src="change-theme.js"></script>
+			
+    		 <button id="change-theme-btn2">Neutron</button>
+       	 		<script src="change-theme.js"></script>
+			
+		     <button id="change-theme-btn3">Wanda</button>
+       	  		<script src="change-theme.js"></script>
+  			</div>
+	     </div>
+
+		 
+		 
+        </div>
+
+
+
+
+        <div class="cell medium-10" id="msg">
+          <h1 class="text-center">Messages Go Here</h1>
+        </div>
+
+      </div>
+    </div>
+
+
+  </body>
+</html>
+<script>
+
+document.getElementById('change-theme-btn').addEventListener('click', function () 
+{
+    let darkThemeEnabled = document.body.classList.toggle('dark-theme');
+    localStorage.setItem('dark-theme-enabled', darkThemeEnabled);
+});
+
+document.getElementById('change-theme-btn2').addEventListener('click', function () 
+{	
+	let theme2Enabled = document.body.classList.toggle('theme2');
+	localStorage.setItem('theme2-enabled', theme2Enabled);
+});
+
+document.getElementById('change-theme-btn3').addEventListener('click', function () 
+{
+	let theme3Enabled = document.body.classList.toggle('theme3');
+	localStorage.setItem('theme3-enabled', theme3Enabled);
+});
+if (JSON.parse(localStorage.getItem('dark-theme-enabled'))) 
+{
+    document.body.classList.add('dark-theme');
+}
+if (JSON.parse(localStorage.getItem('theme2-enabled'))) 
+{
+    document.body.classList.add('theme2');
+	alert("theme2 ping");
+}
+if (JSON.parse(localStorage.getItem('theme3-enabled'))) 
+{
+    document.body.classList.add('theme3');
+}
+</script>
