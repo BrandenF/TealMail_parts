@@ -34,7 +34,6 @@ if (JSON.parse(localStorage.getItem('dark-theme-enabled')))
 if (JSON.parse(localStorage.getItem('theme2-enabled'))) 
 {
     document.body.classList.add('theme2');
-	alert("theme2 ping");
 }
 if (JSON.parse(localStorage.getItem('theme3-enabled'))) 
 {
